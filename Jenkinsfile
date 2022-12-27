@@ -22,7 +22,7 @@ pipeline{
     stage("uploading to ec2"){
             steps{
                 sshagent(['a401068a-e154-463d-b8b3-5aca1b9422e4']) {
-                    scp -o StrictHostKeyChecking=no target/index.html ec2-user@3.144.131.162:/var/www/html
+                    scp -o StrictHostKeyChecking=no index.html ec2-user@3.144.131.162:/var/www/html
                 }
             }
             post{
