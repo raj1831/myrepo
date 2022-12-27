@@ -4,6 +4,7 @@ pipeline{
     stages{
         stage("SCM Checkout"){
             steps{
+                cleanWs()
                 git credentialsId: '4b651eed-7598-4ce6-ad70-2d18f8ca2e47', url: 'https://github.com/raj1831/myrepo.git'
             }
             post{
